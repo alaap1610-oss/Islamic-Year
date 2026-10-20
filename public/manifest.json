@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "Islamic Life - Islamic Companion & Prayer Times",
+  "short_name": "Islamic Life",
+  "description": "Daily deeds tracker, 5 waqt & nafl prayer times, Hijri calendar, and Islamic push notifications.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d5c46",
+  "theme_color": "#0d5c46",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

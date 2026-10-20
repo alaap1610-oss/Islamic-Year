@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to verify admin role
+    function isAdmin() {
+      return request.auth != null && (
+        request.auth.token.admin == true ||
+        request.auth.token.role == 'admin' ||
+        request.auth.token.email == 'alaap1610@gmail.com'
+      );
+    }
+
+    // FCM Subscriptions: Protected so normal users cannot see others' device tokens
+    match /fcm_subscriptions/{tokenId} {
+      allow read: if isAdmin();
+      // Allow creation/updates of tokens during registration
+      allow write: if true;
+    }
+
+    // Notification History: Readable by all authenticated or public users, written only by Admin
+    match /notification_history/{notificationId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // User Amol Tracker Data: User-isolated storage
+    match /users/{userId}/amols/{dateKey} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

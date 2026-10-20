@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Hind Siliguri', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+}
+
+/* Custom scrollbar for modern feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Animations for Sun Rays & Floating Moon */
+@keyframes sun-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.85));
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+    filter: drop-shadow(0 0 45px rgba(251, 191, 36, 1));
+  }
+}
+
+@keyframes sun-ray-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moon-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-sun-glow {
+  animation: sun-glow 4s ease-in-out infinite;
+}
+
+.animate-sun-rays {
+  animation: sun-ray-rotate 25s linear infinite;
+}
+
+.animate-moon-float {
+  animation: moon-float 5s ease-in-out infinite;
+}

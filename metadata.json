@@ -1,0 +1,6 @@
+{
+  "name": "Islamic Life - Prayer Times & Amol Tracker",
+  "description": "Comprehensive Islamic companion app featuring 5 waqt and nafl prayer times, Maghrib Hijri calendar, persistent amol deed tracker with charts, 21-day prayer and sawm schedule, customizable admin themes, and offline PWA push notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
